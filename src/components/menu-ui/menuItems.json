@@ -1,0 +1,212 @@
+[
+  {
+    "id": 1,
+    "name": "Premium Steak",
+    "category": "meat",
+    "price": "$20.00",
+    "description": "Aged for flavor, perfectly marbled for tenderness."
+  },
+  {
+    "id": 2,
+    "name": "Ribeye Steak",
+    "category": "meat",
+    "price": "$25.00",
+    "description": "Rich, juicy flavor that melts in your mouth."
+  },
+  {
+    "id": 3,
+    "name": "Filet Mignon",
+    "category": "meat",
+    "price": "$30.00",
+    "description": "Tender and buttery, perfect for special occasions."
+  },
+  {
+    "id": 4,
+    "name": "Beef Brisket",
+    "category": "meat",
+    "price": "$15.00",
+    "description": "Slow-cooked for that melt-in-your-mouth experience."
+  },
+  {
+    "id": 5,
+    "name": "Pork Chops",
+    "category": "meat",
+    "price": "$12.00",
+    "description": "Juicy and flavorful, a family favorite."
+  },
+  {
+    "id": 6,
+    "name": "Grilled Chicken",
+    "category": "poultry",
+    "price": "$15.00",
+    "description": "Tender, marinated chicken grilled to perfection."
+  },
+  {
+    "id": 7,
+    "name": "Roast Chicken",
+    "category": "poultry",
+    "price": "$18.00",
+    "description": "Herb-seasoned roast chicken for a hearty meal."
+  },
+  {
+    "id": 8,
+    "name": "Turkey Breast",
+    "category": "poultry",
+    "price": "$16.00",
+    "description": "Lean and flavorful, perfect for sandwiches."
+  },
+  {
+    "id": 9,
+    "name": "Sausage Links",
+    "category": "specialties",
+    "price": "$10.00",
+    "description": "Savory sausage links, great for grilling."
+  },
+  {
+    "id": 10,
+    "name": "Bacon",
+    "category": "specialties",
+    "price": "$12.00",
+    "description": "Crispy, delicious bacon for breakfast or burgers."
+  },
+  {
+    "id": 11,
+    "name": "Beef Jerky",
+    "category": "specialties",
+    "price": "$8.00",
+    "description": "Savory and spicy, perfect for snacking."
+  },
+  {
+    "id": 12,
+    "name": "Lamb Chops",
+    "category": "meat",
+    "price": "$22.00",
+    "description": "Tender and juicy, a gourmet treat."
+  },
+  {
+    "id": 13,
+    "name": "Chicken Wings",
+    "category": "poultry",
+    "price": "$12.00",
+    "description": "Crispy wings, great for parties."
+  },
+  {
+    "id": 14,
+    "name": "Duck Breast",
+    "category": "meat",
+    "price": "$28.00",
+    "description": "Rich flavor, perfect for fine dining."
+  },
+  {
+    "id": 15,
+    "name": "Cornish Hen",
+    "category": "poultry",
+    "price": "$20.00",
+    "description": "Succulent and flavorful, great for roasting."
+  },
+  {
+    "id": 16,
+    "name": "Pork Tenderloin",
+    "category": "meat",
+    "price": "$18.00",
+    "description": "Lean and flavorful, ideal for roasting."
+  },
+  {
+    "id": 17,
+    "name": "Chicken Thighs",
+    "category": "poultry",
+    "price": "$10.00",
+    "description": "Juicy and versatile, great for various dishes."
+  },
+  {
+    "id": 18,
+    "name": "Beef Short Ribs",
+    "category": "meat",
+    "price": "$30.00",
+    "description": "Tender and rich, perfect for slow cooking."
+  },
+  {
+    "id": 19,
+    "name": "Pork Belly",
+    "category": "meat",
+    "price": "$22.00",
+    "description": "Flavorful and succulent, ideal for roasting."
+  },
+  {
+    "id": 20,
+    "name": "Smoked Sausage",
+    "category": "specialties",
+    "price": "$11.00",
+    "description": "Rich and smoky, perfect for grilling."
+  },
+  {
+    "id": 21,
+    "name": "Chorizo Sausage",
+    "category": "specialties",
+    "price": "$9.00",
+    "description": "Spicy and flavorful, great for breakfast."
+  },
+  {
+    "id": 22,
+    "name": "Ground Beef",
+    "category": "meat",
+    "price": "$8.00",
+    "description": "Versatile and lean, perfect for burgers."
+  },
+  {
+    "id": 23,
+    "name": "Beef Fajitas",
+    "category": "meat",
+    "price": "$20.00",
+    "description": "Marinated and grilled, great for tacos."
+  },
+  {
+    "id": 24,
+    "name": "Stuffed Chicken Breasts",
+    "category": "poultry",
+    "price": "$24.00",
+    "description": "Filled with herbs and cheese, a flavorful dish."
+  },
+  {
+    "id": 25,
+    "name": "Chicken Kebab",
+    "category": "poultry",
+    "price": "$15.00",
+    "description": "Skewered and grilled, perfect for grilling season."
+  },
+  {
+    "id": 26,
+    "name": "Merguez Sausage",
+    "category": "specialties",
+    "price": "$10.00",
+    "description": "Spicy North African sausage, perfect for grilling."
+  },
+  {
+    "id": 27,
+    "name": "Lamb Shank",
+    "category": "meat",
+    "price": "$25.00",
+    "description": "Slow-cooked and tender, great for stews."
+  },
+  {
+    "id": 28,
+    "name": "Stuffed Pork Chops",
+    "category": "meat",
+    "price": "$16.00",
+    "description": "Pork chops stuffed with herbs and spices."
+  },
+  {
+    "id": 29,
+    "name": "Bison Burger",
+    "category": "meat",
+    "price": "$15.00",
+    "description": "Lean and flavorful, a unique twist on burgers."
+  },
+  {
+    "id": 30,
+    "name": "Veal Cutlets",
+    "category": "meat",
+    "price": "$30.00",
+    "description": "Tender and delicate, perfect for pan-frying."
+  }
+]

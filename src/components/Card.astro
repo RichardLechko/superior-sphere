@@ -1,23 +1,16 @@
 ---
 const { href, title, body } = Astro.props;
+import { Button } from "@/components/ui/button";
 ---
 
-<li>
-  <a href={href} class="card">
-    <h2>{title}</h2>
-    <p>{body}</p>
-  </a>
+<li class="border rounded-lg shadow-md overflow-hidden">
+  <div class="p-4">
+    <h3 class="text-xl font-bold mb-2">{title}</h3>
+    <p class="mb-4">{body}</p>
+    <a href={href} class="text-white">
+      <Button className="px-4 py-2 rounded transition duration-200"
+        >Learn More</Button
+      >
+    </a>
+  </div>
 </li>
-
-<style>
-  .card {
-    padding: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    text-decoration: none;
-    color: inherit;
-  }
-  .card:hover {
-    background-color: #f0f0f0;
-  }
-</style>

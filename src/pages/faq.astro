@@ -1,0 +1,18 @@
+---
+// faq.astro
+import { AccordionDemo } from "../components/AccordianDemo";
+import Layout from "@/layouts/Layout.astro";
+import "@/styles/global.css";
+---
+
+<Layout title="Freedom Butchers - FAQ" headerTitle="Freedom Butchers - FAQ">
+  <main class="max-w-4xl mx-auto p-4 pt-24">
+    <!-- FAQ Section -->
+    <section
+      class="bg-white dark:bg-gray-800 shadow-md rounded-lg p-6 space-y-6"
+    >
+      <!-- Accordion Component -->
+      <AccordionDemo client:load />
+    </section>
+  </main>
+</Layout>

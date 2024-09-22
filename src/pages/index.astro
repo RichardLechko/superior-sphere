@@ -1,19 +1,146 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
+import Layout from "@/layouts/Layout.astro";
+import {
+  FacebookHoverCard,
+  InstagramHoverCard,
+} from "../components/HoverCardTest";
 ---
 
-<Layout title="Welcome to Astro">
-  <ul>
-    <Card
-      href="https://docs.astro.build/"
-      title="Documentation"
-      body="Learn how Astro works and explore the official API docs."
-    />
-    <Card
-      href="https://astro.build/integrations/"
-      title="Integrations"
-      body="Supercharge your project with new frameworks and libraries."
-    />
-  </ul>
+<Layout title="Freedom Butchers" headerTitle="Freedom Butchers">
+  <main class="p-4 pt-24">
+    <section
+      id="hero"
+      class="bg-cover bg-center bg-gray-100 dark:bg-gray-700 h-72 text-center pt-12 mb-8 relative"
+    >
+      <div class="container mx-auto relative z-10">
+        <h2 class="text-4xl font-extrabold mb-4">
+          Welcome to Freedom Butchers
+        </h2>
+        <FacebookHoverCard client:load />
+        <InstagramHoverCard client:load />
+        <p class="text-xl mb-6">
+          Premium cuts of meat for every occasion. Explore our quality and
+          experience the best!
+        </p>
+        <a
+          href="/menu"
+          class="px-6 py-3 rounded-full font-semibold transition bg-black text-white dark:bg-white dark:text-black"
+        >
+          See Our Menu
+        </a>
+      </div>
+      <div class="absolute inset-0 opacity-50 z-0"></div>
+    </section>
+
+    <section
+      id="talk-meat"
+      class="flex items-center justify-center h-96 relative overflow-hidden mb-8 py-8"
+    >
+      <h2 class="text-[5rem] font-extrabold flex space-x-8">
+        <span class="animate-modern">Let's</span>
+        <span>/</span>
+        <span class="animate-modern">Talk</span>
+        <span>/</span>
+        <span class="animate-modern">Meat</span>
+      </h2>
+      <div class="absolute inset-0 opacity-50"></div>
+    </section>
+
+    <section
+      id="welcome"
+      class="text-center mb-8 shadow-md p-6 rounded-lg pt-24"
+    >
+      <h2 class="text-2xl font-bold mb-4">Welcome to Freedom Butchers</h2>
+      <p class="mt-4">
+        At Freedom Butchers, we offer high-quality meats sourced from the best
+        suppliers. Our friendly staff is here to help you find exactly what you
+        need, whether you're preparing a family meal or a special occasion
+        feast.
+      </p>
+      <img
+        src="/images/freedombutchers.jpg"
+        alt="Butcher Shop"
+        class="w-full max-w-2xl mx-auto my-4 rounded-lg shadow-lg border-4"
+      />
+    </section>
+
+    <section
+      class="flex flex-col md:flex-row items-stretch justify-center gap-8 mb-8 p-6"
+    >
+      <!-- Location Section -->
+      <div
+        id="location"
+        class="flex-1 flex flex-col text-center p-6 rounded-lg shadow-lg bg-white dark:bg-gray-800"
+      >
+        <h2 class="text-2xl font-bold mb-4">Location</h2>
+        <p class="mb-4">
+          We are located at 123 Freedom St., Your City, Your State
+        </p>
+        <iframe
+          src="https://maps.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8354345098476!2d144.95373531590758!3d-37.81627997975136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0a5b81ab%3A0x123456789abcdef!2sYour%20Business!5e0!3m2!1sen!2sus!4v1234567890"
+          width="100%"
+          height="300"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          class="mt-4 rounded-lg shadow-sm"></iframe>
+      </div>
+
+      <!-- Store Hours Section -->
+      <div
+        id="hours"
+        class="flex-1 flex flex-col text-center p-6 rounded-lg shadow-lg bg-white dark:bg-gray-800"
+      >
+        <h2 class="text-2xl font-bold mb-4">Store Hours</h2>
+        <div class="overflow-x-auto">
+          <table class="min-w-full text-xl">
+            <thead>
+              <tr class="bg-gray-100 dark:bg-gray-700">
+                <th class="py-2 text-left">Day</th>
+                <th class="py-2 text-left">Hours</th>
+              </tr>
+            </thead>
+            <tbody class="text-left">
+              <tr class="border-b">
+                <td class="py-2">Monday</td>
+                <td class="py-2">Closed</td>
+              </tr>
+              <tr class="border-b">
+                <td class="py-2">Tuesday</td>
+                <td class="py-2">1 PM - 6 PM</td>
+              </tr>
+              <tr class="border-b">
+                <td class="py-2">Wednesday</td>
+                <td class="py-2">10 AM - 6 PM</td>
+              </tr>
+              <tr class="border-b">
+                <td class="py-2">Thursday</td>
+                <td class="py-2">10 AM - 6 PM</td>
+              </tr>
+              <tr class="border-b">
+                <td class="py-2">Friday</td>
+                <td class="py-2">10 AM - 6 PM</td>
+              </tr>
+              <tr class="border-b">
+                <td class="py-2">Saturday</td>
+                <td class="py-2">10 AM - 4 PM</td>
+              </tr>
+              <tr>
+                <td class="py-2">Sunday</td>
+                <td class="py-2">10 AM - 2 PM</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="catering" class="text-center mb-8 p-6 rounded-lg shadow-md">
+      <h2 class="text-2xl font-bold mb-4">Catering Services</h2>
+      <p>
+        We offer catering services for all occasions, from parties to corporate
+        events. Contact us to discuss your needs and get a quote.
+      </p>
+    </section>
+  </main>
 </Layout>

@@ -1,22 +1,114 @@
 ---
 const { title } = Astro.props;
+const { headerTitle } = Astro.props;
+import ModeToggle from "@/components/ModeToggle";
+import { AvatarDemo } from "@/components/AvatarDemo";
+import "@/styles/global.css";
 ---
 
-<!doctype html>
+<script>
+  const yearSpan = document.getElementById("currentYear");
+  if (yearSpan) {
+    yearSpan.textContent = String(new Date().getFullYear());
+  }
+</script>
+
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
-    <link rel="stylesheet" href="/src/styles/global.css" />
   </head>
-  <body>
-    <header>
-      <h1>{title}</h1>
+  <body class="bg-white text-black dark:bg-gray-900 dark:text-white">
+    <header
+      class="py-4 fixed top-0 left-0 w-full z-50 bg-background text-foreground shadow-lg duration-300"
+    >
+      <div class="container mx-auto flex justify-between items-center">
+        <h1 class="text-3xl font-extrabold">{headerTitle}</h1>
+        <div class="flex space-x-12">
+          <nav class="flex space-x-6 border-b-2 border-gray-300 pb-2">
+            <ul class="flex space-x-6">
+              <li class="nav-item">
+                <a href="/#hero" class="hover:text-gray-900">Home</a>
+              </li>
+
+              <li class="nav-item">
+                <a href="/#location" class="hover:text-gray-900">Location</a>
+              </li>
+              <li class="nav-item">
+                <a href="/#hours" class="hover:text-gray-900">Store Hours</a>
+              </li>
+              <li class="nav-item">
+                <a href="/#catering" class="hover:text-gray-900">Catering</a>
+              </li>
+            </ul>
+          </nav>
+          <nav class="flex space-x-6 text-gray-500">
+            <ul class="flex space-x-6">
+              <li class="nav-item">
+                <a href="/about" class="hover:text-gray-900">About</a>
+              </li>
+              <li class="nav-item">
+                <a href="/menu" class="hover:text-gray-900">Menu</a>
+              </li>
+              <li class="nav-item">
+                <a href="/contact" class="hover:text-gray-900">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a href="/faq" class="hover:text-gray-900">FAQ</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <ModeToggle client:load />
+      </div>
     </header>
-    <main>
+
+    <main class="mt-16">
       <slot />
     </main>
-    <!-- Removed footer section -->
+
+    <footer
+      class="bg-gray-50 dark:bg-gray-900 text-gray-600 dark:text-gray-400 p-8 mt-12 border-t border-gray-200 dark:border-gray-700"
+    >
+      <div
+        class="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0"
+      >
+        <p class="text-sm">
+          &copy; <span id="currentYear"></span> Freedom Butchers. All rights reserved.
+        </p>
+
+        <div class="flex items-center space-x-4">
+          <a
+            href="#"
+            class="relative hover:text-gray-900 dark:hover:text-gray-100 text-gray-600 dark:text-gray-400 transition-colors duration-300 after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-full after:scale-x-0 hover:after:scale-x-100 after:bg-gray-800 dark:after:bg-gray-100 after:origin-left after:transition-transform after:duration-300"
+          >
+            Privacy Policy
+          </a>
+          <a
+            href="#"
+            class="relative hover:text-gray-900 dark:hover:text-gray-100 text-gray-600 dark:text-gray-400 transition-colors duration-300 after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-full after:scale-x-0 hover:after:scale-x-100 after:bg-gray-800 dark:after:bg-gray-100 after:origin-left after:transition-transform after:duration-300"
+          >
+            Terms of Service
+          </a>
+          <a
+            href="#"
+            class="relative hover:text-gray-900 dark:hover:text-gray-100 text-gray-600 dark:text-gray-400 transition-colors duration-300 after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-full after:scale-x-0 hover:after:scale-x-100 after:bg-gray-800 dark:after:bg-gray-100 after:origin-left after:transition-transform after:duration-300"
+          >
+            Contact Us
+          </a>
+          <p class="flex items-center">
+            Developed by
+            <a
+              href="https://github.com/RichardLechko"
+              target="_blank"
+              class="ml-2"
+            >
+              <AvatarDemo client:load />
+            </a>
+          </p>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

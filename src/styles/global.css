@@ -2,33 +2,73 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f9f9f9;
-  color: #333;
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+  }
+
+  .light {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    background-color: var(--background);
+    color: var(--foreground);
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    background-color: var(--background);
+    color: var(--foreground);
+  }
 }
 
-header {
-  background-color: #6200ea;
-  color: white;
-  padding: 1rem;
-  text-align: center;
+@layer components {
+  header {
+    --bg-light: white;
+    --bg-dark: hsl(240 10% 10%);
+    --text-light: black;
+    --text-dark: white;
+  }
+
+  .nav-item a {
+    position: relative;
+    padding-bottom: 4px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition:
+      color 0.3s ease,
+      border-bottom-color 0.3s ease;
+  }
+
+  .nav-item a::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0;
+    background-color: currentColor; /* Default to current text color */
+    transition:
+      width 0.3s ease,
+      background-color 0.3s ease;
+  }
+
+  .nav-item a:hover::before {
+    width: 100%;
+  }
+
+  .dark .nav-item a::before {
+    background-color: #ffffff;
+  }
+
+  .dark .nav-item a {
+    color: #ffffff;
+  }
 }
 
-main {
-  padding: 1rem;
-  max-width: 800px;
-  margin: auto;
-}
-
-footer {
-  text-align: center;
-  padding: 1rem;
-  background-color: #6200ea;
-  color: white;
-  position: absolute;
-  width: 100%;
-  bottom: 0;
+html {
+  overflow-y: scroll;
+  scroll-behavior: smooth;
 }
