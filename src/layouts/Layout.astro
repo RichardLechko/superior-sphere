@@ -1,8 +1,8 @@
 ---
 const { title } = Astro.props;
 const { headerTitle } = Astro.props;
-import ModeToggle from "@/components/ModeToggle";
-import { AvatarDemo } from "@/components/AvatarDemo";
+import ModeToggle from "@/components/ui/ModeToggle";
+import { AvatarDemo } from "@/components/ui/AvatarDemo";
 import "@/styles/global.css";
 ---
 
@@ -80,19 +80,19 @@ import "@/styles/global.css";
 
         <div class="flex items-center space-x-4">
           <a
-            href="#"
+            href="/privacy"
             class="relative hover:text-gray-900 dark:hover:text-gray-100 text-gray-600 dark:text-gray-400 transition-colors duration-300 after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-full after:scale-x-0 hover:after:scale-x-100 after:bg-gray-800 dark:after:bg-gray-100 after:origin-left after:transition-transform after:duration-300"
           >
             Privacy Policy
           </a>
           <a
-            href="#"
+            href="/tos"
             class="relative hover:text-gray-900 dark:hover:text-gray-100 text-gray-600 dark:text-gray-400 transition-colors duration-300 after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-full after:scale-x-0 hover:after:scale-x-100 after:bg-gray-800 dark:after:bg-gray-100 after:origin-left after:transition-transform after:duration-300"
           >
             Terms of Service
           </a>
           <a
-            href="#"
+            href="/contact"
             class="relative hover:text-gray-900 dark:hover:text-gray-100 text-gray-600 dark:text-gray-400 transition-colors duration-300 after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-full after:scale-x-0 hover:after:scale-x-100 after:bg-gray-800 dark:after:bg-gray-100 after:origin-left after:transition-transform after:duration-300"
           >
             Contact Us
@@ -108,6 +108,21 @@ import "@/styles/global.css";
             </a>
           </p>
         </div>
+      </div>
+      <div class="mt-4 text-center text-sm text-gray-500 dark:text-gray-400">
+        <p>
+          Deployed on <a
+            href="https://vercel.com"
+            target="_blank"
+            class="underline hover:text-gray-800 dark:hover:text-gray-200"
+            >Vercel</a
+          > &middot; Built with <a
+            href="https://astro.build"
+            target="_blank"
+            class="underline hover:text-gray-800 dark:hover:text-gray-200"
+            >Astro</a
+          >
+        </p>
       </div>
     </footer>
   </body>

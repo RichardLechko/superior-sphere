@@ -4,6 +4,12 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
-    }
-  }
+    },
+    "module": "ESNext", // Use ESNext modules
+    "target": "ESNext", // Or whichever target you prefer
+    "moduleResolution": "Node", // Ensure Node module resolution
+    "esModuleInterop": true, // For importing CommonJS modules
+    "skipLibCheck": true // Skip type checking of declaration files
+  },
+  "include": ["src/**/*", "backend/**/*"] // Ensure both src and backend directories are included
 }
