@@ -66,7 +66,7 @@ export function SelectDemo() {
   };
 
   return (
-    <div>
+    <div className="pt-24 px-8">
       <SelectInput
         selectedCategory={selectedCategory}
         handleSelectChange={handleSelectChange}
@@ -81,6 +81,7 @@ export function SelectDemo() {
         removeFilter={removeFilter}
         removePriceFilter={removePriceFilter}
       />
+
       <DisplayItems
         items={filteredItems}
         visibleItems={visibleItems}

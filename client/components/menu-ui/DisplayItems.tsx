@@ -1,4 +1,3 @@
-// DisplayItems.tsx
 import React from "react";
 
 interface Item {
@@ -24,7 +23,7 @@ const DisplayItems: React.FC<DisplayItemsProps> = ({
         {items.slice(0, visibleItems).map((item) => (
           <div
             key={item.id}
-            className="p-4 rounded-lg shadow-lg bg-white transition-transform transform hover:scale-105"
+            className="w-11/12 md:w-5/6 p-4 rounded-lg shadow-lg bg-white transition-transform transform"
           >
             <h4 className="text-xl font-semibold text-gray-800">{item.name}</h4>
             <p className="text-lg text-gray-600">{item.price}</p>
@@ -37,12 +36,14 @@ const DisplayItems: React.FC<DisplayItemsProps> = ({
       </div>
 
       {items.length > visibleItems && (
-        <button
-          onClick={loadMoreItems}
-          className="mt-4 px-4 py-2 text-sm font-semibold text-white bg-blue-500 rounded hover:bg-blue-600"
-        >
-          Load More
-        </button>
+        <div className="flex m-auto justify-center">
+          <button
+            onClick={loadMoreItems}
+            className="my-4 px-4 py-4 text-sm font-semibold text-white bg-blue-500 rounded-lg hover:bg-blue-600"
+          >
+            Load More
+          </button>
+        </div>
       )}
     </div>
   );

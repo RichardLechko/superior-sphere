@@ -1,29 +1,12 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import "@/styles/global.css";
 import { SelectDemo } from "../components/menu-ui/SelectDemo";
 ---
 
-<Layout title="Freedom Butchers - Menu" headerTitle="Freedom Butchers - Menu">
+<Layout title="Freedom Butchers - Menu" headerTitle="Menu">
   <main>
-    <section
-      id="menu"
-      class="text-center mb-8 p-6 rounded-lg shadow-md pt-24 bg-gray-50 dark:bg-gray-800"
-    >
-      <h2 class="text-3xl font-bold mb-4 text-gray-800 dark:text-gray-200">
-        Our Menu
-      </h2>
-      <p class="mb-6 text-gray-600 dark:text-gray-400">
-        Discover our delicious offerings and order through our delivery
-        partners:
-      </p>
-
-      <!-- Filter Buttons -->
-      <div class="mb-6">
-        <SelectDemo client:load />
-      </div>
-
-      <!-- Menu Items -->
-    </section>
+    <div>
+      <SelectDemo client:load />
+    </div>
   </main>
 </Layout>
