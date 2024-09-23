@@ -4,6 +4,7 @@
 
 @layer base {
   :root {
+    --radius: 0.5rem;
     --background: 0 0% 100%;
     --foreground: 240 10% 3.9%;
   }
@@ -149,3 +150,18 @@ html {
 /* ANIMATION */
 /* ANIMATION */
 /* ANIMATION */
+
+/* CONTACT */
+/* CONTACT */
+/* CONTACT */
+
+#formContact {
+  font-family: "Inter", system-ui;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+
+/* CONTACT */
+/* CONTACT */
+/* CONTACT */

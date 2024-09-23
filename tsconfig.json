@@ -3,7 +3,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./client/*"]
     },
     "module": "ESNext", // Use ESNext modules
     "target": "ESNext", // Or whichever target you prefer
@@ -11,5 +11,5 @@
     "esModuleInterop": true, // For importing CommonJS modules
     "skipLibCheck": true // Skip type checking of declaration files
   },
-  "include": ["src/**/*", "backend/**/*"] // Ensure both src and backend directories are included
+  "include": ["src/**/*", "client/lib", "server/**/*", "client/**/*"]
 }

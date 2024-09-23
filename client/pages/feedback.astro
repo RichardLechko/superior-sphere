@@ -1,7 +1,7 @@
 ---
-import Layout from "@/layouts/Layout.astro";
+import Layout from "../layouts/Layout.astro";
 import "@/styles/global.css";
-import FeedbackForm from "../components/Feedback/FeedbackForm";
+import FeedBackForm from "../components/Feedback/FeedBackForm";
 ---
 
 <Layout title="Freedom Butchers - Feedback" headerTitle="Feedback">
@@ -19,8 +19,8 @@ import FeedbackForm from "../components/Feedback/FeedbackForm";
         Please share your thoughts about your experience with us. Your feedback
         helps us improve our services.
       </p>
-
-      <FeedbackForm client:load />
+      <!-- Feedback Form Component -->
+      <FeedBackForm client:load />
     </section>
   </main>
 </Layout>
