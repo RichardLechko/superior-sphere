@@ -165,3 +165,33 @@ html {
 /* CONTACT */
 /* CONTACT */
 /* CONTACT */
+
+/* MENU */
+/* MENU */
+/* MENU */
+
+.scrollbar {
+  overflow-y: hidden; /* Hide scrollbar by default */
+  transition: overflow-y 0.3s ease; /* Smooth transition for overflow */
+}
+
+.scrollbar:hover {
+  overflow-y: auto; /* Show scrollbar on hover */
+}
+
+.scrollbar::-webkit-scrollbar {
+  width: 7px; /* Scrollbar width */
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  border-radius: 100vh;
+  background-color: #c1c1c1;
+}
+
+.scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #a9a9a9;
+}
+
+/* MENU */
+/* MENU */
+/* MENU */

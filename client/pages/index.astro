@@ -36,7 +36,9 @@ import {
       id="talk-meat"
       class="flex items-center justify-center h-80 relative overflow-hidden mb-8 py-8"
     >
-      <h2 class="text-[5rem] font-extrabold flex space-x-8">
+      <h2
+        class="text-[5rem] font-extrabold flex space-x-8 max-[1024px]:text-[4rem]"
+      >
         <span class="hover-3d animate-glitch">Let's</span>
         <span>/</span>
         <span class="hover-3d animate-neon">Talk</span>
@@ -60,7 +62,7 @@ import {
       <img
         src="/images/freedombutchers.jpg"
         alt="Butcher Shop"
-        class="w-full max-w-2xl mx-auto my-4 rounded-lg shadow-lg border-4"
+        class="w-full max-w-2xl mx-auto my-4 rounded-lg shadow-lg border-4 max-[1024px]:max-w-xl"
       />
     </section>
 
@@ -69,37 +71,40 @@ import {
     >
       <!-- Location Section -->
       <section
-  id="location"
-  class="flex-1 flex flex-col text-center p-6 rounded-lg shadow-lg bg-white dark:bg-gray-800"
->
-  <h2 class="text-2xl font-bold mb-4">Our Location - Freedom Butchers</h2>
-  
-  <address class="not-italic mb-4">
-    Visit us at: <strong>8600 W 159th St, Orland Park, IL 60462</strong>.
-    Conveniently located in the heart of Orland Park, Freedom Butchers is easy to find for all your fresh meat and catering needs.
-  </address>
+        id="location"
+        class="flex-1 flex flex-col text-center p-6 rounded-lg shadow-lg bg-white dark:bg-gray-800"
+      >
+        <h2 class="text-2xl font-bold mb-4 max-[1024px]:text-xl">
+          Our Location - Freedom Butchers
+        </h2>
 
-  <iframe
-    title="Freedom Butchers Location Map"
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2983.4677318964723!2d-87.83186342342583!3d41.60239628263034!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880e3ffd4d45ace5%3A0x8c542ccb7cf7d4a5!2sFreedom%20Butchers!5e0!3m2!1sen!2sus!4v1727112358469!5m2!1sen!2sus"
-    width="100%"
-    height="300"
-    style="border:0;"
-    allowfullscreen=""
-    loading="lazy"
-    class="mt-4 rounded-lg shadow-sm"
-  ></iframe>
-</section>
+        <address class="not-italic mb-4 text-base">
+          Visit us at: <strong>8600 W 159th St, Orland Park, IL 60462</strong>.
+          Conveniently located in the heart of Orland Park, Freedom Butchers is
+          easy to find for all your fresh meat and catering needs.
+        </address>
 
+        <iframe
+          title="Freedom Butchers Location Map"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2983.4677318964723!2d-87.83186342342583!3d41.60239628263034!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880e3ffd4d45ace5%3A0x8c542ccb7cf7d4a5!2sFreedom%20Butchers!5e0!3m2!1sen!2sus!4v1727112358469!5m2!1sen!2sus"
+          width="100%"
+          height="300"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          class="mt-4 rounded-lg shadow-sm"></iframe>
+      </section>
 
       <!-- Store Hours Section -->
       <div
         id="hours"
         class="flex-1 flex flex-col text-center p-6 rounded-lg shadow-lg bg-white dark:bg-gray-800"
       >
-        <h2 class="text-2xl font-bold mb-4">Store Hours</h2>
+        <h2 class="text-2xl font-bold mb-4 max-[1024px]:text-xl">
+          Store Hours
+        </h2>
         <div class="overflow-x-auto">
-          <table class="min-w-full text-xl">
+          <table class="min-w-full text-xl max-[1024px]:text-lg">
             <thead>
               <tr class="bg-gray-100 dark:bg-gray-700">
                 <th class="py-2 text-left">Day</th>
@@ -141,37 +146,64 @@ import {
       </div>
     </section>
 
-    <section id="catering" class="mb-12 p-8 rounded-lg bg-white dark:bg-gray-800 shadow-lg">
+    <section
+      id="catering"
+      class="mb-12 p-8 rounded-lg bg-white dark:bg-gray-800 shadow-lg"
+    >
       <h2 class="text-2xl font-bold mb-4">Catering Services</h2>
       <div class="space-y-6 text-left text-gray-700 dark:text-white">
         <p>
-          At Freedom Butchers, we offer a variety of catering services to meet the needs of any event—whether you're hosting a family gathering, corporate event, or special celebration. From mouthwatering meats to custom platters, we can cater to groups of any size.
+          At Freedom Butchers, we offer a variety of catering services to meet
+          the needs of any event—whether you're hosting a family gathering,
+          corporate event, or special celebration. From mouthwatering meats to
+          custom platters, we can cater to groups of any size.
         </p>
         <p>
-          To discuss your specific catering needs and receive a personalized quote, please call our store directly. Our team is ready to assist you in creating the perfect menu for your event.
+          To discuss your specific catering needs and receive a personalized
+          quote, please call our store directly. Our team is ready to assist you
+          in creating the perfect menu for your event.
         </p>
         <p>
-          In addition to direct catering orders, we also partner with popular delivery services for a seamless catering experience. You can conveniently place catering orders through:
+          In addition to direct catering orders, we also partner with popular
+          delivery services for a seamless catering experience. You can
+          conveniently place catering orders through:
         </p>
-        <ul class="list-inside list-disc space-y-2 ">
+        <ul class="list-inside list-disc space-y-2">
           <li>
-            <a href="https://www.doordash.com" class="text-blue-600 hover:underline dark:text-yellow-400" target="_blank">DoorDash</a>
+            <a
+              href="https://www.doordash.com"
+              class="text-blue-600 hover:underline dark:text-yellow-400"
+              target="_blank">DoorDash</a
+            >
           </li>
           <li>
-            <a href="https://www.ubereats.com" class="text-blue-600 hover:underline dark:text-yellow-400" target="_blank">UberEats</a>
+            <a
+              href="https://www.ubereats.com"
+              class="text-blue-600 hover:underline dark:text-yellow-400"
+              target="_blank">UberEats</a
+            >
           </li>
           <li>
-            <a href="https://www.postmates.com" class="text-blue-600 hover:underline dark:text-yellow-400" target="_blank">Postmates</a>
+            <a
+              href="https://www.postmates.com"
+              class="text-blue-600 hover:underline dark:text-yellow-400"
+              target="_blank">Postmates</a
+            >
           </li>
           <li>
-            <a href="https://www.grubhub.com" class="text-blue-600 hover:underline dark:text-yellow-400" target="_blank">GrubHub</a>
+            <a
+              href="https://www.grubhub.com"
+              class="text-blue-600 hover:underline dark:text-yellow-400"
+              target="_blank">GrubHub</a
+            >
           </li>
         </ul>
         <p>
-          Whether you're ordering online or reaching out directly, Freedom Butchers is committed to providing high-quality catering with exceptional service.
+          Whether you're ordering online or reaching out directly, Freedom
+          Butchers is committed to providing high-quality catering with
+          exceptional service.
         </p>
       </div>
     </section>
-    
   </main>
 </Layout>

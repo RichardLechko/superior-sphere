@@ -3,14 +3,22 @@
     "id": 1,
     "name": "Premium Steak",
     "category": "meat",
-    "price": "$20.00",
+    "prices": [
+      { "size": "Large", "price": "$5.00" },
+      { "size": "Medium", "price": "$4.00" },
+      { "size": "Small", "price": "$3.00" }
+    ],
     "description": "Aged for flavor, perfectly marbled for tenderness."
   },
   {
     "id": 2,
     "name": "Ribeye Steak",
     "category": "meat",
-    "price": "$25.00",
+    "prices": [
+      { "size": "Large (1 lb)", "price": "$5.00" },
+      { "size": "Medium (8 oz)", "price": "$4.00" },
+      { "size": "Small (4 oz)", "price": "$3.00" }
+    ],
     "description": "Rich, juicy flavor that melts in your mouth."
   },
   {

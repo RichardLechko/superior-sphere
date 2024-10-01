@@ -4,6 +4,8 @@ import "@/styles/global.css";
 import {
   FacebookHoverCard,
   InstagramHoverCard,
+  YelpHoverCard,
+  LinkedInHoverCard,
 } from "../components/ui/HoverCardTest";
 ---
 
@@ -17,36 +19,62 @@ import {
     </div>
 
     <div class="flex flex-wrap gap-12 mb-12">
-      <div class="bg-white p-8 rounded-lg shadow-md flex-1 min-w-[300px] transition-transform transform hover:scale-105 hover:shadow-lg mb-8 dark:bg-gray-700">
-        <h3 class="text-2xl font-semibold mb-4 dark:text-white">Get in Touch</h3>
-        <p class="text-gray-700 dark:text-gray-300 mb-6">You can reach us via:</p>
+      <div
+        class="bg-white p-8 rounded-lg shadow-md flex-1 min-w-[300px] transition-transform transform hover:scale-105 hover:shadow-lg mb-8 dark:bg-gray-700"
+      >
+        <h3 class="text-2xl font-semibold mb-4 dark:text-white">
+          Get in Touch
+        </h3>
+        <p class="text-gray-700 dark:text-gray-300 mb-6">
+          You can reach us via:
+        </p>
         <ul class="list-disc list-inside space-y-3">
           <li>
             <strong>Email:</strong>
-            <a class="text-blue-600 dark:text-yellow-400 hover:underline" href="mailto:contact@freedombutchers.com">contact@freedombutchers.com</a>
+            <a
+              class="text-blue-600 dark:text-yellow-400 hover:underline"
+              href="mailto:contact@freedombutchers.com"
+              >contact@freedombutchers.com</a
+            >
           </li>
           <li>
             <strong>Phone:</strong>
-            <a class="text-blue-600 dark:text-yellow-400 hover:underline" href="tel:+7089660543">(708) 966-0543</a>
+            <a
+              class="text-blue-600 dark:text-yellow-400 hover:underline"
+              href="tel:+7089660543">(708) 966-0543</a
+            >
           </li>
           <li>
-            <strong>Address:</strong> 8600 West 159th Street, Suite 6, Orland Park, IL, United States
+            <strong>Address:</strong> 8600 West 159th Street, Suite 6, Orland Park,
+            IL, United States
           </li>
         </ul>
       </div>
 
-      <div class="bg-white p-8 rounded-lg shadow-md flex-1 min-w-[300px] transition-transform transform hover:scale-105 hover:shadow-lg mb-8 dark:bg-gray-700">
-        <h3 class="text-2xl font-semibold mb-4 dark:text-white">Connect with Us</h3>
-        <div class="space-y-4">
+      <div
+        class="bg-white p-8 rounded-lg shadow-md flex-1 min-w-[300px] transition-transform transform hover:scale-105 hover:shadow-lg mb-8 dark:bg-gray-700"
+      >
+        <h3 class="text-2xl font-semibold mb-4 dark:text-white">
+          Connect with Us
+        </h3>
+        <div class="flex flex-wrap gap-6">
           <FacebookHoverCard client:load />
           <InstagramHoverCard client:load />
+          <YelpHoverCard client:load />
+          <LinkedInHoverCard client:load />
         </div>
       </div>
 
-      <div class="bg-white p-8 rounded-lg shadow-md flex-1 min-w-[300px] transition-transform transform hover:scale-105 hover:shadow-lg mb-8 dark:bg-gray-700">
+      <div
+        class="bg-white p-8 rounded-lg shadow-md flex-1 min-w-[300px] transition-transform transform hover:scale-105 hover:shadow-lg mb-8 dark:bg-gray-700"
+      >
         <h3 class="text-2xl font-semibold mb-4 dark:text-white">Feedback</h3>
-        <p class="text-gray-700 dark:text-gray-300 mb-6">We value your feedback! Please let us know how we can improve.</p>
-        <button class="bg-blue-600 dark:bg-stone-500 dark:hover:bg-stone-600 dark:text-white text-white px-6 py-3 rounded transition-colors duration-200 hover:bg-blue-700">
+        <p class="text-gray-700 dark:text-gray-300 mb-6">
+          We value your feedback! Please let us know how we can improve.
+        </p>
+        <button
+          class="bg-blue-600 dark:bg-stone-500 dark:hover:bg-stone-600 dark:text-white text-white px-6 py-3 rounded transition-colors duration-200 hover:bg-blue-700"
+        >
           <a href="/feedback">Feedback Form</a>
         </button>
       </div>

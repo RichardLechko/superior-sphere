@@ -1,15 +1,34 @@
 ---
-const { title } = Astro.props;
-const { headerTitle } = Astro.props;
+const { title, className, headerTitle } = Astro.props;
 import ModeToggle from "../components/ui/ModeToggle";
 import { AvatarDemo } from "../components/ui/AvatarDemo";
 import "@/styles/global.css";
 ---
 
 <script>
-  const yearSpan = document.getElementById("currentYear");
-  if (yearSpan) {
-    yearSpan.textContent = String(new Date().getFullYear());
+  // Safely get the elements
+  const header = document.getElementById("site-header");
+  const navbar = document.getElementById("site-navbar");
+  const currentYearElement = document.getElementById("currentYear");
+
+  // Check if elements exist before working with them
+  if (header && navbar) {
+    const headerHeight = header.offsetHeight;
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > headerHeight) {
+        navbar.classList.remove("top-[4rem]");
+        navbar.classList.add("top-0");
+      } else {
+        navbar.classList.remove("top-0");
+        navbar.classList.add("top-[4rem]");
+      }
+    });
+  }
+
+  // Safely set the current year if the element exists
+  if (currentYearElement) {
+    currentYearElement.textContent = new Date().getFullYear().toString();
   }
 </script>
 
@@ -21,69 +40,103 @@ import "@/styles/global.css";
       href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
-
     <title>{title}</title>
   </head>
+
   <body class="bg-white text-black dark:bg-gray-900 dark:text-white">
+    <!-- Header with title and Dark Mode Toggle -->
     <header
-      class="py-4 fixed top-0 left-0 w-full z-50 bg-background text-foreground shadow-lg duration-300"
+      id="site-header"
+      class="py-4 px-6 bg-background text-foreground shadow-lg"
     >
       <div class="container mx-auto flex justify-between items-center">
         <h1 class="text-3xl font-extrabold">{headerTitle}</h1>
-        <div class="flex space-x-12">
-          <nav class="flex space-x-6 border-b-2 border-gray-300 pb-2">
-            <ul class="flex space-x-6">
-              <li class="nav-item">
-                <a href="/#hero" class="hover:text-gray-900">Home</a>
-              </li>
-
-              <li class="nav-item">
-                <a href="/#location" class="hover:text-gray-900">Location</a>
-              </li>
-              <li class="nav-item">
-                <a href="/#hours" class="hover:text-gray-900">Store Hours</a>
-              </li>
-              <li class="nav-item">
-                <a href="/#catering" class="hover:text-gray-900">Catering</a>
-              </li>
-            </ul>
-          </nav>
-          <nav class="flex space-x-6 text-gray-500">
-            <ul class="flex space-x-6">
-              <li class="nav-item">
-                <a href="/about" class="hover:text-gray-900">About</a>
-              </li>
-              <li class="nav-item">
-                <a href="/menu" class="hover:text-gray-900">Menu</a>
-              </li>
-              <li class="nav-item">
-                <a href="/contact" class="hover:text-gray-900">Contact</a>
-              </li>
-              <li class="nav-item">
-                <a href="/faq" class="hover:text-gray-900">FAQ</a>
-              </li>
-            </ul>
-          </nav>
-        </div>
         <ModeToggle client:load />
       </div>
     </header>
 
-    <main class="mt-16">
+    <!-- Navbar that will move to the top when scrolling past the header -->
+    <nav
+      id="site-navbar"
+      class="bg-background px-4 md:px-6 text-foreground shadow-lg fixed left-0 w-full z-50 top-[4rem] transition-all duration-300"
+    >
+      <div class="container mx-auto flex justify-between items-center py-4">
+        <div class="flex flex-wrap space-x-4 md:space-x-12 pr-2">
+          <ul class="flex flex-nowrap space-x-4 border-b-2 border-gray-300">
+            <li class="nav-item">
+              <a href="/#hero" class="text-xs md:text-sm hover:text-gray-900"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                href="/#location"
+                class="text-xs md:text-sm hover:text-gray-900">Location</a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="/#hours" class="text-xs md:text-sm hover:text-gray-900"
+                >Store Hours</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                href="/#catering"
+                class="text-xs md:text-sm hover:text-gray-900">Catering</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div class="flex flex-wrap space-x-4 md:space-x-6 text-gray-500">
+          <ul class="flex flex-nowrap space-x-4">
+            <li class="nav-item">
+              <a href="/about" class="text-xs md:text-sm hover:text-gray-900"
+                >About</a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="/menu" class="text-xs md:text-sm hover:text-gray-900"
+                >Menu</a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="/contact" class="text-xs md:text-sm hover:text-gray-900"
+                >Contact</a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="/faq" class="text-xs md:text-sm hover:text-gray-900"
+                >FAQ</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                href="/testimonials"
+                class="text-xs md:text-sm hover:text-gray-900">Testimonials</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main content -->
+    <main class="pt-4">
       <slot />
     </main>
 
+    <!-- Footer -->
     <footer
       class="bg-gray-50 dark:bg-gray-900 text-gray-600 dark:text-gray-400 p-8 mt-12 border-t border-gray-200 dark:border-gray-700"
     >
       <div
-        class="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0"
+        class="max-w-4xl mx-auto flex flex-col items-center justify-between space-y-4 md:space-y-0"
       >
-        <p class="text-sm">
+        <p class="text-sm order-1">
           &copy; <span id="currentYear"></span> Freedom Butchers. All rights reserved.
         </p>
-
-        <div class="flex items-center space-x-4">
+        <div class="flex items-center space-x-4 text-base order-2">
           <a
             href="/privacy"
             class="relative hover:text-gray-900 dark:hover:text-gray-100 text-gray-600 dark:text-gray-400 transition-colors duration-300 after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-full after:scale-x-0 hover:after:scale-x-100 after:bg-gray-800 dark:after:bg-gray-100 after:origin-left after:transition-transform after:duration-300"
@@ -116,23 +169,38 @@ import "@/styles/global.css";
       </div>
       <div class="mt-4 text-center text-sm text-gray-500 dark:text-gray-400">
         <p>
-          Deployed on <a
+          Deployed on
+          <a
             href="https://vercel.com"
             target="_blank"
             class="underline hover:text-gray-800 dark:hover:text-gray-200"
             >Vercel</a
-          > &middot; Built with <a
+          >
+          &middot; Built with
+          <a
             href="https://astro.build"
             target="_blank"
             class="underline hover:text-gray-800 dark:hover:text-gray-200"
             >Astro</a
-          > &middot; Styled with <a
-          href="https://tailwindcss.com/"
-          target="_blank"
-           class="underline hover:text-gray-800 dark:hover:text-gray-200">
-           Tailwind<a/>
+          >
+          &middot; Styled with
+          <a
+            href="https://tailwindcss.com/"
+            target="_blank"
+            class="underline hover:text-gray-800 dark:hover:text-gray-200"
+            >Tailwind</a
+          >
+          &middot; Designed with
+          <a
+            href="https://ui.shadcn.com/"
+            target="_blank"
+            class="underline hover:text-gray-800 dark:hover:text-gray-200"
+            >ShadCN</a
+          >
         </p>
       </div>
     </footer>
+
+    <!-- Script to dynamically move the navbar to the top when scrolled past the header -->
   </body>
 </html>
