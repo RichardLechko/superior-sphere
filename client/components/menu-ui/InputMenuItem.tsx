@@ -2,24 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Input } from "../../components/ui/input";
 import menuItemsData from "./menuItems.json";
 import { ButtonDemo } from "./ButtonDemo";
-
-interface PriceOption {
-  size: string;
-  price: string;
-}
-
-interface Item {
-  id: number;
-  name: string;
-  description: string;
-  price?: string;
-  prices?: PriceOption[];
-}
-
-interface InputMenuItemsProps {
-  searchTerm: string;
-  setSearchTerm: React.Dispatch<React.SetStateAction<string>>;
-}
+import type { Item, InputMenuItemsProps } from "@/types";
 
 export function InputMenuItems({
   searchTerm,

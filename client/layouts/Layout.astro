@@ -34,16 +34,14 @@ import "@/styles/global.css";
     currentYearElement.textContent = new Date().getFullYear().toString();
   }
 
-  // Handle sidebar toggle
   if (sidebar && burgerIcon) {
     burgerIcon.addEventListener("click", () => {
-      sidebar.classList.toggle("transform"); // Add class to show sidebar
+      sidebar.classList.toggle("transform");
       sidebar.classList.toggle("-translate-x-full");
-      if (overlay) overlay.classList.toggle("hidden"); // Show overlay
+      if (overlay) overlay.classList.toggle("hidden");
     });
   }
 
-  // Close sidebar when the close button or overlay is clicked
   if (closeSidebarButton) {
     closeSidebarButton.addEventListener("click", closeSidebar);
   }
@@ -52,22 +50,17 @@ import "@/styles/global.css";
     overlay.addEventListener("click", closeSidebar);
   }
 
-  // Function to close the sidebar
   function closeSidebar() {
     if (sidebar) {
-      // Check if sidebar is not null
-      sidebar.classList.add("-translate-x-full"); // Hide sidebar
+      sidebar.classList.add("-translate-x-full");
       sidebar.classList.remove("transform");
     }
     if (overlay) {
-      // Check if overlay is not null
-      overlay.classList.add("hidden"); // Hide overlay
+      overlay.classList.add("hidden");
     }
   }
 
-  // Close sidebar when a link is clicked
   if (sidebar) {
-    // Check if sidebar is not null
     const links = sidebar.querySelectorAll("a");
     links.forEach((link) => {
       link.addEventListener("click", closeSidebar);
@@ -83,11 +76,11 @@ import "@/styles/global.css";
       href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
+    <link rel="icon" href="/freedombutchers-logo.svg" type="image/x-icon" />
     <title>{title}</title>
   </head>
 
   <body class="bg-white text-black dark:bg-gray-900 dark:text-white">
-    <!-- Header with title and Dark Mode Toggle -->
     <header
       id="site-header"
       class="py-4 px-6 bg-background text-foreground shadow-lg fixed w-full z-50"
@@ -107,11 +100,9 @@ import "@/styles/global.css";
       </div>
     </header>
 
-    <!-- Overlay when sidebar is open -->
     <div id="overlay" class="fixed inset-0 bg-black opacity-50 hidden z-40">
     </div>
 
-    <!-- Sidebar for mobile navigation -->
     <nav
       id="mobile-sidebar"
       class="fixed left-0 top-0 w-64 max-[375px]:w-44 h-full bg-background text-foreground shadow-lg z-50 transform -translate-x-full transition-transform duration-300 md:hidden"
@@ -123,39 +114,36 @@ import "@/styles/global.css";
         </button>
       </div>
 
-      <ul class="flex flex-col space-y-4 p-4">
-        <li><a href="/#hero" class="text-sm hover:text-gray-900">Home</a></li>
+      <ul class="flex flex-col space-y-4 p-4 text-gray-900 dark:text-white">
+        <li><a href="/#hero" class="text-base hover:underline">Home</a></li>
         <li>
-          <a href="/#location" class="text-sm hover:text-gray-900">Location</a>
+          <a href="/#location" class="text-base hover:underline">Location</a>
         </li>
         <li>
-          <a href="/#hours" class="text-sm hover:text-gray-900">Store Hours</a>
+          <a href="/#hours" class="text-base hover:underline">Store Hours</a>
         </li>
         <li>
-          <a href="/#catering" class="text-sm hover:text-gray-900">Catering</a>
+          <a href="/#catering" class="text-base hover:underline">Catering</a>
         </li>
-        <li><a href="/about" class="text-sm hover:text-gray-900">About</a></li>
-        <li><a href="/menu" class="text-sm hover:text-gray-900">Menu</a></li>
+        <li><a href="/about" class="text-base hover:underline">About</a></li>
+        <li><a href="/menu" class="text-base hover:underline">Menu</a></li>
+
+        <li><a href="/faq" class="text-base hover:underline">FAQ</a></li>
         <li>
-          <a href="/contact" class="text-sm hover:text-gray-900">Contact</a>
-        </li>
-        <li><a href="/faq" class="text-sm hover:text-gray-900">FAQ</a></li>
-        <li>
-          <a href="/testimonials" class="text-sm hover:text-gray-900"
+          <a href="/testimonials" class="text-base hover:underline"
             >Testimonials</a
           >
         </li>
       </ul>
     </nav>
 
-    <!-- Navbar for desktop (hidden on mobile) -->
     <nav
       id="site-navbar"
       class="hidden md:flex bg-background px-4 md:px-6 text-foreground fixed left-0 w-full z-50 top-[4rem] transition-all duration-300"
     >
       <div class="container mx-auto flex justify-between items-center py-4">
         <div class="flex flex-wrap space-x-4 md:space-x-12 pr-2">
-          <ul class="flex flex-nowrap space-x-4 border-b-2 border-gray-300">
+          <ul class="flex flex-nowrap space-x-4 border-gray-300">
             <li class="nav-item">
               <a href="/#hero" class="text-xs md:text-sm hover:text-gray-900"
                 >Home</a
@@ -193,11 +181,7 @@ import "@/styles/global.css";
                 >Menu</a
               >
             </li>
-            <li class="nav-item">
-              <a href="/contact" class="text-xs md:text-sm hover:text-gray-900"
-                >Contact</a
-              >
-            </li>
+
             <li class="nav-item">
               <a href="/faq" class="text-xs md:text-sm hover:text-gray-900"
                 >FAQ</a
@@ -214,12 +198,10 @@ import "@/styles/global.css";
       </div>
     </nav>
 
-    <!-- Main content -->
     <main class="pt-4">
       <slot />
     </main>
 
-    <!-- Footer -->
     <footer
       class="bg-gray-50 dark:bg-gray-900 text-gray-600 dark:text-gray-400 p-8 mt-12 border-t border-gray-200 dark:border-gray-700"
     >
@@ -242,7 +224,7 @@ import "@/styles/global.css";
             href="/tos"
             class="relative hover:text-gray-900 dark:hover:text-gray-100 text-gray-600 dark:text-gray-400 transition-colors duration-300 after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-full after:scale-x-0 hover:after:scale-x-100 after:bg-gray-800 dark:after:bg-gray-100 after:origin-left after:transition-transform after:duration-300"
           >
-            TOS
+            Terms
           </a>
           <a
             href="/contact"

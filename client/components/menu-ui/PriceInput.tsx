@@ -1,4 +1,3 @@
-// PriceInput.tsx
 import * as React from "react";
 import {
   Select,
@@ -9,13 +8,9 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import type { PriceInputProps } from "@/types";
 
-const priceOptions = ["Lowest to Highest", "Highest to Lowest"]; // Price sorting options
-
-interface PriceInputProps {
-  selectedPriceRange: string | null;
-  handlePriceChange: (priceRange: string | null) => void; // Adjusted prop
-}
+const priceOptions = ["Lowest to Highest", "Highest to Lowest"];
 
 const PriceInput: React.FC<PriceInputProps> = ({
   selectedPriceRange,

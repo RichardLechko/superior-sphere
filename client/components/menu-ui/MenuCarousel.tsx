@@ -7,15 +7,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-
-interface PriceOption {
-  size: string;
-  price: string;
-}
-
-interface CarouselDemoProps {
-  prices: PriceOption[];
-}
+import type { CarouselDemoProps } from "@/types";
 
 export function CarouselDemo({ prices }: CarouselDemoProps) {
   return (

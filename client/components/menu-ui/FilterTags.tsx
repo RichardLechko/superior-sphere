@@ -1,11 +1,5 @@
 import React from "react";
-
-interface FilterTagsProps {
-  selectedCategory: string | null;
-  selectedPriceRange: string | null;
-  removeFilter: () => void;
-  removePriceFilter: () => void;
-}
+import type { FilterTagsProps } from "@/types";
 
 const FilterTags: React.FC<FilterTagsProps> = ({
   selectedCategory,
@@ -35,7 +29,7 @@ const FilterTags: React.FC<FilterTagsProps> = ({
             {selectedPriceRange}
           </span>
           <button
-            onClick={removePriceFilter} // Ensure this calls the correct function
+            onClick={removePriceFilter}
             className="ml-2 text-red-500 hover:text-red-700"
           >
             X

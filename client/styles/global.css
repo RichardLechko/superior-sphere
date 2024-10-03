@@ -52,7 +52,7 @@
     bottom: 0;
     height: 2px;
     width: 0;
-    background-color: currentColor; /* Default to current text color */
+    background-color: currentColor;
     transition:
       width 0.3s ease,
       background-color 0.3s ease;
@@ -171,16 +171,16 @@ html {
 /* MENU */
 
 .scrollbar {
-  overflow-y: hidden; /* Hide scrollbar by default */
-  transition: overflow-y 0.3s ease; /* Smooth transition for overflow */
+  overflow-y: hidden;
+  transition: overflow-y 0.3s ease;
 }
 
 .scrollbar:hover {
-  overflow-y: auto; /* Show scrollbar on hover */
+  overflow-y: auto;
 }
 
 .scrollbar::-webkit-scrollbar {
-  width: 7px; /* Scrollbar width */
+  width: 7px;
 }
 
 .scrollbar::-webkit-scrollbar-thumb {

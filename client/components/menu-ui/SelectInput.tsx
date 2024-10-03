@@ -8,13 +8,9 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import type { SelectInputProps } from "@/types";
 
-const tags = ["All", "Meat", "Poultry", "Specialties"]; // Categories array
-
-interface SelectInputProps {
-  selectedCategory: string | null;
-  handleSelectChange: (value: string) => void;
-}
+const tags = ["All", "Meat", "Poultry", "Specialties"];
 
 const SelectInput: React.FC<SelectInputProps> = ({
   selectedCategory,

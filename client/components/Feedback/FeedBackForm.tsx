@@ -3,14 +3,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
-
-// Define the type for the form data
-type FormData = {
-  name: string;
-  email: string;
-  subject: string;
-  message: string;
-};
+import type { FormData } from "@/types";
 
 export default function FeedbackForm() {
   const [formData, setFormData] = useState<FormData>({
