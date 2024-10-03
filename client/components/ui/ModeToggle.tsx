@@ -31,7 +31,7 @@ const ModeToggle = () => {
       onClick={toggleTheme}
       className="bg-gray-200 dark:bg-gray-800 p-2 rounded"
     >
-      {theme === "light" ? "Dark Mode" : "Light Mode"}
+      {theme === "light" ? "\uD83C\uDF19" : "\uD83C\uDF1E"}
     </button>
   );
 };

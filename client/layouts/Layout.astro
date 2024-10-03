@@ -2,16 +2,20 @@
 const { title, className, headerTitle } = Astro.props;
 import ModeToggle from "../components/ui/ModeToggle";
 import { AvatarDemo } from "../components/ui/AvatarDemo";
+import { CiMenuBurger } from "react-icons/ci";
+
 import "@/styles/global.css";
 ---
 
 <script>
-  // Safely get the elements
   const header = document.getElementById("site-header");
   const navbar = document.getElementById("site-navbar");
+  const sidebar = document.getElementById("mobile-sidebar");
   const currentYearElement = document.getElementById("currentYear");
+  const burgerIcon = document.getElementById("burger-icon");
+  const closeSidebarButton = document.getElementById("close-sidebar");
+  const overlay = document.getElementById("overlay");
 
-  // Check if elements exist before working with them
   if (header && navbar) {
     const headerHeight = header.offsetHeight;
 
@@ -26,9 +30,48 @@ import "@/styles/global.css";
     });
   }
 
-  // Safely set the current year if the element exists
   if (currentYearElement) {
     currentYearElement.textContent = new Date().getFullYear().toString();
+  }
+
+  // Handle sidebar toggle
+  if (sidebar && burgerIcon) {
+    burgerIcon.addEventListener("click", () => {
+      sidebar.classList.toggle("transform"); // Add class to show sidebar
+      sidebar.classList.toggle("-translate-x-full");
+      if (overlay) overlay.classList.toggle("hidden"); // Show overlay
+    });
+  }
+
+  // Close sidebar when the close button or overlay is clicked
+  if (closeSidebarButton) {
+    closeSidebarButton.addEventListener("click", closeSidebar);
+  }
+
+  if (overlay) {
+    overlay.addEventListener("click", closeSidebar);
+  }
+
+  // Function to close the sidebar
+  function closeSidebar() {
+    if (sidebar) {
+      // Check if sidebar is not null
+      sidebar.classList.add("-translate-x-full"); // Hide sidebar
+      sidebar.classList.remove("transform");
+    }
+    if (overlay) {
+      // Check if overlay is not null
+      overlay.classList.add("hidden"); // Hide overlay
+    }
+  }
+
+  // Close sidebar when a link is clicked
+  if (sidebar) {
+    // Check if sidebar is not null
+    const links = sidebar.querySelectorAll("a");
+    links.forEach((link) => {
+      link.addEventListener("click", closeSidebar);
+    });
   }
 </script>
 
@@ -47,18 +90,68 @@ import "@/styles/global.css";
     <!-- Header with title and Dark Mode Toggle -->
     <header
       id="site-header"
-      class="py-4 px-6 bg-background text-foreground shadow-lg"
+      class="py-4 px-6 bg-background text-foreground shadow-lg fixed w-full z-50"
     >
       <div class="container mx-auto flex justify-between items-center">
-        <h1 class="text-3xl font-extrabold">{headerTitle}</h1>
+        <h1 class="text-3xl font-extrabold max-[640px]:text-xl">
+          {headerTitle}
+        </h1>
         <ModeToggle client:load />
+        <button
+          id="burger-icon"
+          aria-label="Open Sidebar"
+          class="text-2xl md:hidden"
+        >
+          <CiMenuBurger />
+        </button>
       </div>
     </header>
 
-    <!-- Navbar that will move to the top when scrolling past the header -->
+    <!-- Overlay when sidebar is open -->
+    <div id="overlay" class="fixed inset-0 bg-black opacity-50 hidden z-40">
+    </div>
+
+    <!-- Sidebar for mobile navigation -->
+    <nav
+      id="mobile-sidebar"
+      class="fixed left-0 top-0 w-64 max-[375px]:w-44 h-full bg-background text-foreground shadow-lg z-50 transform -translate-x-full transition-transform duration-300 md:hidden"
+    >
+      <div class="flex justify-between items-center p-4">
+        <h2 class="text-xl font-bold">Menu</h2>
+        <button id="close-sidebar" aria-label="Close Sidebar" class="text-xl">
+          &times;
+        </button>
+      </div>
+
+      <ul class="flex flex-col space-y-4 p-4">
+        <li><a href="/#hero" class="text-sm hover:text-gray-900">Home</a></li>
+        <li>
+          <a href="/#location" class="text-sm hover:text-gray-900">Location</a>
+        </li>
+        <li>
+          <a href="/#hours" class="text-sm hover:text-gray-900">Store Hours</a>
+        </li>
+        <li>
+          <a href="/#catering" class="text-sm hover:text-gray-900">Catering</a>
+        </li>
+        <li><a href="/about" class="text-sm hover:text-gray-900">About</a></li>
+        <li><a href="/menu" class="text-sm hover:text-gray-900">Menu</a></li>
+        <li>
+          <a href="/contact" class="text-sm hover:text-gray-900">Contact</a>
+        </li>
+        <li><a href="/faq" class="text-sm hover:text-gray-900">FAQ</a></li>
+        <li>
+          <a href="/testimonials" class="text-sm hover:text-gray-900"
+            >Testimonials</a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Navbar for desktop (hidden on mobile) -->
     <nav
       id="site-navbar"
-      class="bg-background px-4 md:px-6 text-foreground shadow-lg fixed left-0 w-full z-50 top-[4rem] transition-all duration-300"
+      class="hidden md:flex bg-background px-4 md:px-6 text-foreground fixed left-0 w-full z-50 top-[4rem] transition-all duration-300"
     >
       <div class="container mx-auto flex justify-between items-center py-4">
         <div class="flex flex-wrap space-x-4 md:space-x-12 pr-2">
@@ -133,27 +226,29 @@ import "@/styles/global.css";
       <div
         class="max-w-4xl mx-auto flex flex-col items-center justify-between space-y-4 md:space-y-0"
       >
-        <p class="text-sm order-1">
+        <p class="text-sm order-1 mb-4 max-[375px]:text-xs">
           &copy; <span id="currentYear"></span> Freedom Butchers. All rights reserved.
         </p>
-        <div class="flex items-center space-x-4 text-base order-2">
+        <div
+          class="flex items-center space-x-4 text-base order-2 max-[640px]:text-center max-[425px]:text-sm max-[375px]:text-xs max-[375px]:space-x-2"
+        >
           <a
             href="/privacy"
             class="relative hover:text-gray-900 dark:hover:text-gray-100 text-gray-600 dark:text-gray-400 transition-colors duration-300 after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-full after:scale-x-0 hover:after:scale-x-100 after:bg-gray-800 dark:after:bg-gray-100 after:origin-left after:transition-transform after:duration-300"
           >
-            Privacy Policy
+            Privacy
           </a>
           <a
             href="/tos"
             class="relative hover:text-gray-900 dark:hover:text-gray-100 text-gray-600 dark:text-gray-400 transition-colors duration-300 after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-full after:scale-x-0 hover:after:scale-x-100 after:bg-gray-800 dark:after:bg-gray-100 after:origin-left after:transition-transform after:duration-300"
           >
-            Terms of Service
+            TOS
           </a>
           <a
             href="/contact"
             class="relative hover:text-gray-900 dark:hover:text-gray-100 text-gray-600 dark:text-gray-400 transition-colors duration-300 after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-full after:scale-x-0 hover:after:scale-x-100 after:bg-gray-800 dark:after:bg-gray-100 after:origin-left after:transition-transform after:duration-300"
           >
-            Contact Us
+            Contact
           </a>
           <p class="flex items-center">
             Developed by
@@ -167,40 +262,48 @@ import "@/styles/global.css";
           </p>
         </div>
       </div>
-      <div class="mt-4 text-center text-sm text-gray-500 dark:text-gray-400">
-        <p>
-          Deployed on
-          <a
-            href="https://vercel.com"
-            target="_blank"
-            class="underline hover:text-gray-800 dark:hover:text-gray-200"
-            >Vercel</a
-          >
-          &middot; Built with
-          <a
-            href="https://astro.build"
-            target="_blank"
-            class="underline hover:text-gray-800 dark:hover:text-gray-200"
-            >Astro</a
-          >
-          &middot; Styled with
-          <a
-            href="https://tailwindcss.com/"
-            target="_blank"
-            class="underline hover:text-gray-800 dark:hover:text-gray-200"
-            >Tailwind</a
-          >
-          &middot; Designed with
-          <a
-            href="https://ui.shadcn.com/"
-            target="_blank"
-            class="underline hover:text-gray-800 dark:hover:text-gray-200"
-            >ShadCN</a
-          >
+      <div
+        class="mt-8 text-center text-sm max-[375px]:text-xs text-gray-500 dark:text-gray-400"
+      >
+        <p class="flex flex-wrap justify-center gap-4">
+          <span>
+            Deployed on
+            <a
+              href="https://vercel.com"
+              target="_blank"
+              class="underline hover:text-gray-800 dark:hover:text-gray-200"
+              >Vercel</a
+            >
+          </span>
+          <span>
+            Built with
+            <a
+              href="https://astro.build"
+              target="_blank"
+              class="underline hover:text-gray-800 dark:hover:text-gray-200"
+              >Astro</a
+            >
+          </span>
+          <span>
+            Styled with
+            <a
+              href="https://tailwindcss.com/"
+              target="_blank"
+              class="underline hover:text-gray-800 dark:hover:text-gray-200"
+              >Tailwind</a
+            >
+          </span>
+          <span>
+            Designed with
+            <a
+              href="https://ui.shadcn.com/"
+              target="_blank"
+              class="underline hover:text-gray-800 dark:hover:text-gray-200"
+              >ShadCN</a
+            >
+          </span>
         </p>
       </div>
     </footer>
-
-    <!-- Script to dynamically move the navbar to the top when scrolled past the header -->
   </body>
 </html>

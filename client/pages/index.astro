@@ -1,8 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import {
-  FacebookHoverCard,
-  InstagramHoverCard,
+  FacebookHoverCardMainPage,
+  InstagramHoverCardMainPage,
 } from "../components/ui/HoverCardTest";
 ---
 
@@ -10,39 +10,52 @@ import {
   <main class="p-4 pt-24">
     <section
       id="hero"
-      class="bg-cover bg-center bg-gray-100 dark:bg-gray-700 h-72 text-center pt-12 mb-8 relative"
+      class="bg-cover bg-center bg-gray-100 dark:bg-gray-700 h-72 max-[1024px]:h-80 max-[768px]:h-96 text-center pt-12 mb-12 relative"
     >
-      <div class="container mx-auto relative z-10">
-        <h2 class="text-4xl font-extrabold mb-4">
+      <div class="container mx-auto relative z-10 mb-8">
+        <h2
+          class="text-4xl font-extrabold mb-4 max-md:text-3xl max-[640px]:text-2xl max-[425px]:text-xl"
+        >
           Welcome to Freedom Butchers
         </h2>
-        <FacebookHoverCard client:load />
-        <InstagramHoverCard client:load />
-        <p class="text-xl mb-6">
+        <div
+          class="flex flex-row m-auto justify-center gap-4 my-6 max-[640px]:flex-col"
+        >
+          <FacebookHoverCardMainPage client:load />
+          <InstagramHoverCardMainPage client:load />
+        </div>
+        <p
+          class="text-xl mb-6 px-6 max-md:text-lg max-[640px]:text-base max-[425px]:text-sm"
+        >
           Premium cuts of meat for every occasion. Explore our quality and
           experience the best!
         </p>
         <a
           href="/menu"
-          class="px-6 py-3 rounded-full font-semibold transition bg-black text-white dark:bg-white dark:text-black"
+          class="px-6 py-3 rounded-full max-[640px]:px-4 max-[640px]:text-sm font-semibold transition bg-black text-white dark:bg-white dark:text-black"
         >
           See Our Menu
         </a>
       </div>
+
       <div class="absolute inset-0 opacity-50 z-0"></div>
     </section>
 
     <section
       id="talk-meat"
-      class="flex items-center justify-center h-80 relative overflow-hidden mb-8 py-8"
+      class="flex items-center justify-center h-80 relative overflow-hidden mb-8 py-4"
     >
       <h2
-        class="text-[5rem] font-extrabold flex space-x-8 max-[1024px]:text-[4rem]"
+        class="text-[5rem] font-extrabold flex flex-col md:flex-row items-center md:space-x-8 max-[1024px]:text-[2.5rem] leading-snug"
       >
         <span class="hover-3d animate-glitch">Let's</span>
-        <span>/</span>
+        <span class="hidden md:inline"> / </span>
+        <span class="md:hidden">///</span>
+        <!-- Separator for mobile -->
         <span class="hover-3d animate-neon">Talk</span>
-        <span>/</span>
+        <span class="hidden md:inline"> / </span>
+        <span class="md:hidden">///</span>
+        <!-- Separator for mobile -->
         <span class="hover-3d animate-glitch">Meat</span>
       </h2>
       <div class="absolute inset-0 opacity-50"></div>
@@ -67,7 +80,7 @@ import {
     </section>
 
     <section
-      class="flex flex-col md:flex-row items-stretch justify-center gap-8 mb-8 p-6"
+      class="flex flex-col md:flex-row items-stretch justify-center gap-8 mb-8"
     >
       <!-- Location Section -->
       <section
@@ -104,7 +117,9 @@ import {
           Store Hours
         </h2>
         <div class="overflow-x-auto">
-          <table class="min-w-full text-xl max-[1024px]:text-lg">
+          <table
+            class="min-w-full text-xl max-[1024px]:text-lg max-[375px]:text-base"
+          >
             <thead>
               <tr class="bg-gray-100 dark:bg-gray-700">
                 <th class="py-2 text-left">Day</th>
@@ -118,30 +133,44 @@ import {
               </tr>
               <tr class="border-b">
                 <td class="py-2">Tuesday</td>
-                <td class="py-2">1 PM - 6 PM</td>
+                <td class="py-2">01:00 PM - 06:00 PM</td>
               </tr>
               <tr class="border-b">
                 <td class="py-2">Wednesday</td>
-                <td class="py-2">10 AM - 6 PM</td>
+                <td class="py-2">10:00 AM - 06:00 PM</td>
               </tr>
               <tr class="border-b">
                 <td class="py-2">Thursday</td>
-                <td class="py-2">10 AM - 6 PM</td>
+                <td class="py-2">10:00 AM - 06:00 PM</td>
               </tr>
               <tr class="border-b">
                 <td class="py-2">Friday</td>
-                <td class="py-2">10 AM - 6 PM</td>
+                <td class="py-2">10:00 AM - 06:00 PM</td>
               </tr>
               <tr class="border-b">
                 <td class="py-2">Saturday</td>
-                <td class="py-2">10 AM - 4 PM</td>
+                <td class="py-2">10:00 AM - 04:00 PM</td>
               </tr>
               <tr>
                 <td class="py-2">Sunday</td>
-                <td class="py-2">10 AM - 2 PM</td>
+                <td class="py-2">10:00 AM - 02:00 PM</td>
               </tr>
             </tbody>
           </table>
+          <div
+            class="flex flex-col mt-4 text-lg max-[425px]:text-base max-[375px]:text-sm"
+          >
+            <p
+              class="text-gray-600 dark:text-gray-300 italic text-center underline"
+            >
+              All hours are in CST
+            </p>
+            <p
+              class="text-gray-600 dark:text-gray-300 italic text-center underline"
+            >
+              Hours are subject to change
+            </p>
+          </div>
         </div>
       </div>
     </section>

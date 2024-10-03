@@ -22,7 +22,7 @@ const testimonials = () => {
   ];
 
   return (
-    <section className="w-full mx-auto p-8 pb-16">
+    <section className="w-full mx-auto p-4 sm:p-8 pb-8 md:pb-16">
       <div className="w-full">
         <CarouselYelp reviews={reviews} />
       </div>

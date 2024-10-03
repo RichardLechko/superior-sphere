@@ -7,12 +7,14 @@ import YelpReviews from "../components/YelpReviews/Testimonials";
   <main>
     <section
       id="testimonials"
-      class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200 p-12 rounded-lg shadow-lg mb-12"
+      class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200 p-8 sm:p-12 mt-24 rounded-lg shadow-lg mb-12"
     >
-      <h2 class="text-2xl font-bold text-center mb-6">
+      <h2 class="text-3xl font-bold text-center mb-6">
         What Our Customers Say
       </h2>
-      <YelpReviews client:load />
+      <div class="flex flex-col justify-center items-center">
+        <YelpReviews client:load />
+      </div>
     </section>
   </main>
 </Layout>
