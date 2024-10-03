@@ -8,213 +8,213 @@
       { "size": "Medium", "price": "$4.00" },
       { "size": "Small", "price": "$3.00" }
     ],
-    "description": "Aged for flavor, perfectly marbled for tenderness."
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore."
   },
   {
     "id": 2,
     "name": "Ribeye Steak",
     "category": "meat",
     "prices": [
-      { "size": "Large (1 lb)", "price": "$5.00" },
-      { "size": "Medium (8 oz)", "price": "$4.00" },
-      { "size": "Small (4 oz)", "price": "$3.00" }
+      { "size": "1 lb", "price": "$5.00" },
+      { "size": "8 oz", "price": "$4.00" },
+      { "size": "4 oz", "price": "$3.00" }
     ],
-    "description": "Rich, juicy flavor that melts in your mouth."
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore."
   },
   {
     "id": 3,
     "name": "Filet Mignon",
     "category": "meat",
     "price": "$30.00",
-    "description": "Tender and buttery, perfect for special occasions."
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore."
   },
   {
     "id": 4,
     "name": "Beef Brisket",
     "category": "meat",
     "price": "$15.00",
-    "description": "Slow-cooked for that melt-in-your-mouth experience."
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore."
   },
   {
     "id": 5,
     "name": "Pork Chops",
     "category": "meat",
     "price": "$12.00",
-    "description": "Juicy and flavorful, a family favorite."
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore."
   },
   {
     "id": 6,
     "name": "Grilled Chicken",
     "category": "poultry",
     "price": "$15.00",
-    "description": "Tender, marinated chicken grilled to perfection."
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore."
   },
   {
     "id": 7,
     "name": "Roast Chicken",
     "category": "poultry",
     "price": "$18.00",
-    "description": "Herb-seasoned roast chicken for a hearty meal."
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore."
   },
   {
     "id": 8,
     "name": "Turkey Breast",
     "category": "poultry",
     "price": "$16.00",
-    "description": "Lean and flavorful, perfect for sandwiches."
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore."
   },
   {
     "id": 9,
     "name": "Sausage Links",
     "category": "specialties",
     "price": "$10.00",
-    "description": "Savory sausage links, great for grilling."
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore."
   },
   {
     "id": 10,
     "name": "Bacon",
     "category": "specialties",
     "price": "$12.00",
-    "description": "Crispy, delicious bacon for breakfast or burgers."
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore."
   },
   {
     "id": 11,
     "name": "Beef Jerky",
     "category": "specialties",
     "price": "$8.00",
-    "description": "Savory and spicy, perfect for snacking."
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore."
   },
   {
     "id": 12,
     "name": "Lamb Chops",
     "category": "meat",
     "price": "$22.00",
-    "description": "Tender and juicy, a gourmet treat."
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore."
   },
   {
     "id": 13,
     "name": "Chicken Wings",
     "category": "poultry",
     "price": "$12.00",
-    "description": "Crispy wings, great for parties."
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore."
   },
   {
     "id": 14,
     "name": "Duck Breast",
     "category": "meat",
     "price": "$28.00",
-    "description": "Rich flavor, perfect for fine dining."
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore."
   },
   {
     "id": 15,
     "name": "Cornish Hen",
     "category": "poultry",
     "price": "$20.00",
-    "description": "Succulent and flavorful, great for roasting."
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore."
   },
   {
     "id": 16,
     "name": "Pork Tenderloin",
     "category": "meat",
     "price": "$18.00",
-    "description": "Lean and flavorful, ideal for roasting."
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore."
   },
   {
     "id": 17,
     "name": "Chicken Thighs",
     "category": "poultry",
     "price": "$10.00",
-    "description": "Juicy and versatile, great for various dishes."
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore."
   },
   {
     "id": 18,
     "name": "Beef Short Ribs",
     "category": "meat",
     "price": "$30.00",
-    "description": "Tender and rich, perfect for slow cooking."
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore."
   },
   {
     "id": 19,
     "name": "Pork Belly",
     "category": "meat",
     "price": "$22.00",
-    "description": "Flavorful and succulent, ideal for roasting."
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore."
   },
   {
     "id": 20,
     "name": "Smoked Sausage",
     "category": "specialties",
     "price": "$11.00",
-    "description": "Rich and smoky, perfect for grilling."
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore."
   },
   {
     "id": 21,
     "name": "Chorizo Sausage",
     "category": "specialties",
     "price": "$9.00",
-    "description": "Spicy and flavorful, great for breakfast."
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore."
   },
   {
     "id": 22,
     "name": "Ground Beef",
     "category": "meat",
     "price": "$8.00",
-    "description": "Versatile and lean, perfect for burgers."
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore."
   },
   {
     "id": 23,
     "name": "Beef Fajitas",
     "category": "meat",
     "price": "$20.00",
-    "description": "Marinated and grilled, great for tacos."
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore."
   },
   {
     "id": 24,
     "name": "Stuffed Chicken Breasts",
     "category": "poultry",
     "price": "$24.00",
-    "description": "Filled with herbs and cheese, a flavorful dish."
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore."
   },
   {
     "id": 25,
     "name": "Chicken Kebab",
     "category": "poultry",
     "price": "$15.00",
-    "description": "Skewered and grilled, perfect for grilling season."
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore."
   },
   {
     "id": 26,
     "name": "Merguez Sausage",
     "category": "specialties",
     "price": "$10.00",
-    "description": "Spicy North African sausage, perfect for grilling."
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore."
   },
   {
     "id": 27,
     "name": "Lamb Shank",
     "category": "meat",
     "price": "$25.00",
-    "description": "Slow-cooked and tender, great for stews."
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore."
   },
   {
     "id": 28,
     "name": "Stuffed Pork Chops",
     "category": "meat",
     "price": "$16.00",
-    "description": "Pork chops stuffed with herbs and spices."
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore."
   },
   {
     "id": 29,
     "name": "Bison Burger",
     "category": "meat",
     "price": "$15.00",
-    "description": "Lean and flavorful, a unique twist on burgers."
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore."
   },
   {
     "id": 30,
     "name": "Veal Cutlets",
     "category": "meat",
     "price": "$30.00",
-    "description": "Tender and delicate, perfect for pan-frying."
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore."
   }
 ]

@@ -84,34 +84,33 @@ export function SelectDemo() {
 
   return (
     <div className="pt-24 px-12">
-      <div className="flex items-end mb-4">
-        <div className="flex flex-col gap-4">
+      {/* Container for Search Input */}
+      <div className="flex justify-center w-full mb-4">
+        <InputMenuItems searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+      </div>
+
+      {/* Container for Filter Tags and Select Inputs */}
+      <div className="flex flex-col gap-4 mb-4">
+        <div className="flex gap-4">
           <SelectInput
             selectedCategory={selectedCategory}
             handleSelectChange={handleSelectChange}
           />
-          <div>
-            <PriceInput
-              selectedPriceRange={selectedPriceRange}
-              handlePriceChange={handlePriceChange}
-            />
-          </div>
-        </div>
-        <div className="flex justify-center w-full">
-          <InputMenuItems
-            searchTerm={searchTerm}
-            setSearchTerm={setSearchTerm}
+          <PriceInput
+            selectedPriceRange={selectedPriceRange}
+            handlePriceChange={handlePriceChange}
           />
         </div>
+
+        <FilterTags
+          selectedCategory={selectedCategory}
+          selectedPriceRange={selectedPriceRange}
+          removeFilter={removeFilter}
+          removePriceFilter={removePriceFilter}
+        />
       </div>
 
-      <FilterTags
-        selectedCategory={selectedCategory}
-        selectedPriceRange={selectedPriceRange}
-        removeFilter={removeFilter}
-        removePriceFilter={removePriceFilter}
-      />
-
+      {/* Display Items below the Search Input and Filter Tags */}
       <div className="mt-4">
         <DisplayItems
           items={filteredItems}

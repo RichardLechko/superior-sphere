@@ -1,5 +1,5 @@
 import React from "react";
-import { CarouselDemo } from "../ui/CarouselDemo"; // Adjust the import path as necessary
+import { CarouselDemo } from "./MenuCarousel"; // Adjust the import path as necessary
 
 interface PriceOption {
   size: string;
@@ -31,45 +31,41 @@ const DisplayItems: React.FC<DisplayItemsProps> = ({
 
   return (
     <div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 mt-4">
         {items.slice(0, visibleItems).map((item) => {
-          console.log("Item Details:", item); // Log item details for debugging
+          console.log("Item Details:", item);
 
           return (
             <div
               key={item.id}
-              className={`w-11/12 md:w-5/6 p-4 rounded-lg shadow-lg bg-white transition-transform transform flex flex-col justify-between h-full ${
-                hasItems ? "" : "opacity-50" // Apply opacity based on filtered items
+              className={`w-full md:w-5/6 p-3 sm:p-4 rounded-lg shadow-lg bg-white transition-transform transform flex flex-col justify-between h-full ${
+                hasItems ? "" : "opacity-50"
               }`}
             >
               {item.image && (
                 <img
                   src={item.image}
                   alt={item.name}
-                  className="w-full h-32 object-cover rounded-lg mb-2"
+                  className="w-full h-24 sm:h-32 object-cover rounded-lg mb-2"
                 />
               )}
               <div className="flex-grow">
-                <h4 className="text-xl font-semibold text-gray-800">
+                <h4 className="text-lg sm:text-xl font-semibold text-gray-800">
                   {item.name}
                 </h4>
                 <p className="text-gray-500">{item.description}</p>
-                {/* Conditional Rendering for Prices */}
                 {item.prices ? (
-                  // Render CarouselDemo for items with multiple prices
                   <CarouselDemo prices={item.prices} />
-                ) : // Render single price for items without price options
-                item.price ? (
+                ) : item.price ? (
                   <p className="text-lg font-semibold text-black">
                     {item.price}
                   </p>
                 ) : (
-                  <p className="text-red-500">Price not available</p> // Fallback message
+                  <p className="text-red-500">Price not available</p>
                 )}
               </div>
 
-              {/* Button positioned at the bottom left */}
-              <button className="w-2/6 mt-2 px-4 py-2 text-sm font-semibold text-white bg-blue-500 rounded hover:bg-blue-600">
+              <button className="w-full mt-2 px-4 py-2 text-sm font-semibold text-white bg-blue-500 rounded hover:bg-blue-600">
                 Order
               </button>
             </div>
@@ -78,10 +74,10 @@ const DisplayItems: React.FC<DisplayItemsProps> = ({
       </div>
 
       {items.length > visibleItems && (
-        <div className="flex m-auto justify-center">
+        <div className="flex justify-center">
           <button
             onClick={loadMoreItems}
-            className="my-4 px-4 py-4 text-sm font-semibold text-white bg-blue-500 rounded-lg hover:bg-blue-600"
+            className="my-4 px-4 py-2 text-sm font-semibold text-white bg-blue-500 rounded-lg hover:bg-blue-600"
           >
             Load More
           </button>
